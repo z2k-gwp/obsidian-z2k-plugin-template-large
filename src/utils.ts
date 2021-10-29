@@ -27,3 +27,6 @@ export function isMacOS() {
 export function capitalize(text: string): string {
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
+
+// Perfect place for z2K utils before we shuttle them off to a library
+//  e.g. FillAutomatedFields
