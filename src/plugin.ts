@@ -39,10 +39,10 @@ declare global {
 
   
 // ======================================================================================================
-// Z2KTemplateSmallPlugin Plugin Class
+// Z2KTemplateLargePlugin Plugin Class
 // ======================================================================================================
 // 
-export default class Z2KTemplateSmallPlugin extends Plugin {
+export default class Z2KTemplateLargePlugin extends Plugin {
 
     // My Props and locals
 	public settings: IZ2KTemplateLargeSettings;
@@ -81,7 +81,7 @@ export default class Z2KTemplateSmallPlugin extends Plugin {
 			var loadMoment = (window as any).moment(Date.now())
 			let statusBarItemEl = this.addStatusBarItem();
 			// This is of course obnoxious so please don't do this in a real plugin:
-			statusBarItemEl.setText('Z2K Small Template Plugin Loaded on ' + loadMoment.format('YYYY-MM-DD hh:mm:ss'));
+			statusBarItemEl.setText('Z2K Large Template Plugin Loaded on ' + loadMoment.format('YYYY-MM-DD hh:mm:ss'));
 		}
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
@@ -135,7 +135,7 @@ export default class Z2KTemplateSmallPlugin extends Plugin {
 			// Default icons: 'logo-crystal', 'create-new', 'trash', 'search', 'right-triangle', 'document', 'folder', 'pencil', 'left-arrow', 'right-arrow', 'three-horizontal-bars', 'dot-network', 'audio-file', 'image-file', 'pdf-file', 'gear', 'documents', 'blocks', 'go-to-file', 'presentation', 'cross-in-box', 'microphone', 'microphone-filled', 'two-columns', 'link', 'popup-open', 'checkmark', 'hashtag', 'left-arrow-with-tail', 'right-arrow-with-tail', 'lines-of-text', 'vertical-three-dots', 'pin', 'magnifying-glass', 'info', 'horizontal-split', 'vertical-split', 'calendar-with-checkmark', 'sheets-in-box', 'up-and-down-arrows', 'broken-link', 'cross', 'any-key', 'reset', 'star', 'crossed-star', 'dice', 'filled-pin', 'enter', 'help', 'vault', 'open-vault', 'paper-plane', 'bullet-list', 'uppercase-lowercase-a', 'star-list', 'expand-vertically', 'languages', 'switch', 'pane-layout', 'install'
 			this.ribbonEl = this.addRibbonIcon(
 				'pencil', 
-				'Z2K Plugin Template Small', 
+				'Z2K Plugin Template Large', 
 				async (evt: MouseEvent) => {
 					// Called when the user clicks the icon.
 					const moment = (window as any).moment(Date.now());
@@ -143,7 +143,7 @@ export default class Z2KTemplateSmallPlugin extends Plugin {
 				});
 
 			// Provide a class to the ribbon button in case someone wants to modify it with CSS (e.g. to hide)
-			this.ribbonEl.addClass('z2k-template-small-ribbon-class');
+			this.ribbonEl.addClass('z2k-template-Large-ribbon-class');
 
 			// If we want to add a right-click context menu, here is how periodic notes did it:
 			// this.ribbonEl.addEventListener("contextmenu", (ev: MouseEvent) => {
