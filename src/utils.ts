@@ -19,11 +19,6 @@ import type moment from "moment";
 // Obsidian Imports
 import { App, Menu, Modal, Point } from "obsidian";
 
-
-export function isMacOS() {
-    return navigator.appVersion.indexOf("Mac") !== -1;
-}
-
 export function capitalize(text: string): string {
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
