@@ -14,10 +14,10 @@
 // 
 
 // 3rd Party Imports
-import type Moment from "moment";
+import type moment from "moment"; // Just import the type from obsidian
 
 // Obsidian Imports
-import { addIcon, App, Plugin, Editor, MarkdownView } from "obsidian";
+import { App, Plugin, Editor, MarkdownView, Notice } from "obsidian";
 
 // Internal Plugin Imports
 import { showContextMenu } from "./ui";
@@ -32,7 +32,7 @@ import { capitalize }  from "./utils";
 declare global {
     interface Window {
       app: App;
-      moment: typeof Moment;
+      moment: typeof moment;
     }
   }
 
@@ -65,7 +65,7 @@ export default class Z2KTemplateSmallPlugin extends Plugin {
 		this.ribbonEl = null;
 
 		// Bind to updateSettings event 
-        this.updateSettings = this.updateSettings.bind(this);
+        this.saveSettings = this.saveSettings.bind(this);
 
 		// Load our settings first, as this controls what we do here.
 		await this.loadSettings();
@@ -218,8 +218,8 @@ export default class Z2KTemplateSmallPlugin extends Plugin {
     	this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
 	}
 
-    async updateSettings(val: IZ2KTemplateLargeSettings): Promise<void> {
-        this.settings = val;
+    async saveSettings(): Promise<void> {
+		// Assumes caller has already updated the plugins setting values
         await this.saveData(this.settings);    
         this.onSettingsUpdate();
       }
@@ -249,7 +249,7 @@ export default class Z2KTemplateSmallPlugin extends Plugin {
 	 * @param  {Moment} dateToCreate - a Moment variable representing the day to create
 	 * @returns Promise - Filehandle to the actual note
 	 */
-	async MyMainJob(dateToCreate: Moment): Promise<Boolean> { 
+	async MyMainJob(dateToCreate: moment.Moment): Promise<Boolean> { 
 
 		// Sanity Checks
 		if (this.settings.debugLevel >= 100) { console.log(this.manifest.name + ": MyMainJob() - Entered"); }

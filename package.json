@@ -4,8 +4,8 @@
     "description": "This Z2K plugin is a template for creating larger plugins.",
     "main": "main.js",
     "scripts": {
-        "dev": "esbuild src/plugin.ts --bundle --external:obsidian --outdir=.  --target=es2016 --format=cjs --sourcemap=inline --watch",
-        "build": "esbuild src/plugin.ts --bundle --external:obsidian --outdir=.  --target=es2016 --format=cjs"
+        "dev": "esbuild main=src/plugin.ts --bundle --external:obsidian --outdir=.  --target=es2016 --format=cjs --sourcemap=inline --watch",
+        "build": "esbuild main=src/plugin.ts --bundle --external:obsidian --outdir=.  --target=es2016 --format=cjs"
     },
     "keywords": [],
     "author": "",
@@ -13,6 +13,7 @@
     "devDependencies": {
         "@types/node": "^16.11.1",
         "esbuild": "0.13.8",
+        "moment": "2.29.1",
         "obsidian": "^0.12.17",
         "tslib": "2.3.1",
         "typescript": "4.4.4"

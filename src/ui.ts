@@ -19,6 +19,9 @@ import type moment from "moment";
 // Obsidian Imports
 import { App, Menu, Modal, Point } from "obsidian";
 
+// Internal Imports
+import type { IZ2KTemplateLargeSettings } from "./settings";
+
 
 // ======================================================================================================
 // Commands
@@ -34,14 +37,14 @@ import { App, Menu, Modal, Point } from "obsidian";
 /**
  * Shows a pull down menu when the ribbon button is right clicked
  * 
- * @param  {App} app
+ * @param  {App} The primary app
  * @param  {ISettings} settings
  * @param  {Point} position
  * @returns void
  */
 export function showContextMenu(
     app: App,
-    settings: ISettings,
+    settings: IZ2KTemplateLargeSettings,
     position: Point
   ): void {
     const contextMenu = new Menu(app);
